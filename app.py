@@ -1,7 +1,8 @@
 import gradio as gr
 from transformers import pipeline
 
-classifier = pipeline("text-classification", model="./model")
+classifier = pipeline("text-classification", model=".")
+
 
 def predict(text):
     result = classifier(text, truncation=True, max_length=256)[0]
